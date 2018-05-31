@@ -52,15 +52,29 @@ class AddMemo: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, U
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         SelectedColor = ColorArray[row]
+        color.append(SelectedColor)
     }
     
+    func createAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func cancelMemo(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func storeButtonClicked(_ sender: Any) {
-        performSegue(withIdentifier: "gotoTransfer", sender: self)
+        if textField.text == "" {
+            createAlert(title: "경고!", message: "메모를 추가해주세요!!!")
+        } else {
+            memo.append(textField.text!)
+            performSegue(withIdentifier: "gotoTransfer", sender: self)
+        }
     }
     
    
