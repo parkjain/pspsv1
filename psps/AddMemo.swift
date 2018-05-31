@@ -9,7 +9,7 @@
 import UIKit
 
 
-class AddMemo: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+class AddMemo: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
 
     var SelectedImage: UIImage!
     let ColorArray = ["White", "Red", "Blue"]
@@ -22,10 +22,20 @@ class AddMemo: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedimageView.image = SelectedImage!
+        self.textField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return (true)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
