@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F13AAF1820BF934900ABBDD1 /* myCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13AAF1720BF934900ABBDD1 /* myCell2.swift */; };
 		F15A35C520B3C8670022123B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15A35C420B3C8670022123B /* DetailViewController.swift */; };
 		F1846E6C20B17BC2002BA8E1 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = F1846E5D20B17BC2002BA8E1 /* 8.png */; };
 		F1846E6D20B17BC2002BA8E1 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = F1846E5E20B17BC2002BA8E1 /* 9.png */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F13AAF1720BF934900ABBDD1 /* myCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell2.swift; sourceTree = "<group>"; };
 		F15A35C420B3C8670022123B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F1846E5D20B17BC2002BA8E1 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		F1846E5E20B17BC2002BA8E1 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				F1FA5C4820AD6972003F8CC5 /* ViewController.swift */,
 				F1934D8820AD907400538E4B /* ManuallySelect.swift */,
 				F15A35C420B3C8670022123B /* DetailViewController.swift */,
+				F13AAF1720BF934900ABBDD1 /* myCell2.swift */,
 				F1934D8E20ADA93D00538E4B /* myCell.swift */,
 				F1934D8A20AD917000538E4B /* CameraModeInit.swift */,
 				F1846E7D20B19636002BA8E1 /* UploadImages.swift */,
@@ -225,6 +228,7 @@
 				F1934D8B20AD917000538E4B /* CameraModeInit.swift in Sources */,
 				F1934D8F20ADA93D00538E4B /* myCell.swift in Sources */,
 				F1934D8920AD907400538E4B /* ManuallySelect.swift in Sources */,
+				F13AAF1820BF934900ABBDD1 /* myCell2.swift in Sources */,
 				F1846E7E20B19636002BA8E1 /* UploadImages.swift in Sources */,
 				F1846E8020B1BCA0002BA8E1 /* AddMemo.swift in Sources */,
 				F1FA5C4720AD6972003F8CC5 /* AppDelegate.swift in Sources */,

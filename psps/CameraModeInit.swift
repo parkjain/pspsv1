@@ -9,6 +9,10 @@
 import UIKit
 import MobileCoreServices
 
+var memo: Array<String> = []
+var Images: Array<UIImage> = []
+var color: Array<String> = []
+
 class CameraModeInit: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
@@ -36,7 +40,7 @@ class CameraModeInit: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func cameraClicked(_ sender: UIButton) {
         if(UIImagePickerController.isSourceTypeAvailable(.camera)){
-            flagImageSave = true
+            flagImageSave = false
             imagePicker.delegate = self
             imagePicker.sourceType = .camera
             imagePicker.mediaTypes = [kUTTypeImage as String]
@@ -60,6 +64,7 @@ class CameraModeInit: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             
             imageView.image = captureImage
+            Images.append(captureImage)
         }
         self.dismiss(animated: true, completion: nil)
     }
@@ -69,7 +74,7 @@ class CameraModeInit: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func memoTapped(_ sender: Any) {
-        performSegue(withIdentifier: "transferImage", sender: self)
+        performSegue(withIdentifier: "gotoMemo", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

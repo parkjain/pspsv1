@@ -47,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159" y="7"/>
+            <point key="canvasLocation" x="543" y="20"/>
         </scene>
         <!--Camera Mode Init-->
         <scene sceneID="Od9-e6-RMb">
@@ -113,7 +113,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="IhO-vG-23L" id="xRg-Zq-byk"/>
-                        <segue destination="8a1-Ct-6gI" kind="presentation" identifier="transferImage" id="n4c-2Q-0mt"/>
+                        <segue destination="8a1-Ct-6gI" kind="presentation" identifier="gotoMemo" id="n4c-2Q-0mt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQn-PK-ZOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,54 +210,93 @@
                         <outlet property="colorPicker" destination="clV-8C-J8t" id="uoX-dF-brX"/>
                         <outlet property="selectedimageView" destination="rk4-9X-N0g" id="N0G-7X-hYk"/>
                         <outlet property="textField" destination="4Ay-Fc-gcR" id="lvY-vq-bPR"/>
-                        <segue destination="0RD-fe-Mn9" kind="presentation" identifier="upload" id="z3c-D4-DlI"/>
+                        <segue destination="iAk-Rs-2bx" kind="presentation" identifier="gotoTransfer" id="pfO-lQ-11n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBL-NG-tzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871.2" y="-385.45727136431788"/>
+            <point key="canvasLocation" x="1539" y="-386"/>
         </scene>
         <!--Upload Images-->
-        <scene sceneID="7wx-cv-Ksl">
+        <scene sceneID="Hem-gi-7VC">
             <objects>
-                <viewController storyboardIdentifier="uploadingImages" id="0RD-fe-Mn9" customClass="UploadImages" customModule="psps" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qMD-CP-ff0">
+                <viewController id="iAk-Rs-2bx" customClass="UploadImages" customModule="psps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JOU-1E-spE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4Y-YO-3BI">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RqB-FT-FZV">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="전송 화면" id="TKm-3e-R97"/>
+                                    <navigationItem title="전송 화면" id="E1c-7L-QKt">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="add" id="5A2-TM-KSJ">
+                                            <connections>
+                                                <action selector="gotoAdd:" destination="iAk-Rs-2bx" id="Pz4-ZS-OVV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="전송" id="6SX-om-z7N">
+                                            <connections>
+                                                <action selector="uploadbuttonTapped:" destination="iAk-Rs-2bx" id="TRD-sO-SbQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOR-fT-g8u">
-                                <rect key="frame" x="67" y="227" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNk-sl-qm6">
-                                <rect key="frame" x="166" y="459" width="44" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="전송"/>
-                                <connections>
-                                    <action selector="uploadbuttonTapped:" destination="0RD-fe-Mn9" eventType="touchUpInside" id="xlg-G6-p9V"/>
-                                </connections>
-                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6cc-QU-9Bp">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bfV-3t-Vl9">
+                                    <size key="itemSize" width="120" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell2" id="3sW-hW-4TY" customClass="myCell2" customModule="psps" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hic-dV-c3n">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="hic-dV-c3n" secondAttribute="bottom" id="EgF-j8-j5c"/>
+                                            <constraint firstItem="hic-dV-c3n" firstAttribute="leading" secondItem="3sW-hW-4TY" secondAttribute="leading" id="m6y-jk-zHS"/>
+                                            <constraint firstAttribute="trailing" secondItem="hic-dV-c3n" secondAttribute="trailing" id="vRi-PH-A6i"/>
+                                            <constraint firstItem="hic-dV-c3n" firstAttribute="top" secondItem="3sW-hW-4TY" secondAttribute="top" id="wj6-XT-3Cm"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="ImageView2" destination="hic-dV-c3n" id="h7h-9e-9Ab"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="b5T-fl-PZi"/>
+                        <constraints>
+                            <constraint firstItem="RqB-FT-FZV" firstAttribute="leading" secondItem="6cc-QU-9Bp" secondAttribute="leading" id="B4R-CQ-hMa"/>
+                            <constraint firstItem="RqB-FT-FZV" firstAttribute="trailing" secondItem="6cc-QU-9Bp" secondAttribute="trailing" id="CJI-hW-fO9"/>
+                            <constraint firstItem="RqB-FT-FZV" firstAttribute="top" secondItem="DaY-Mt-jjk" secondAttribute="top" id="DBh-xi-gYu"/>
+                            <constraint firstItem="RqB-FT-FZV" firstAttribute="bottom" secondItem="6cc-QU-9Bp" secondAttribute="top" id="Erx-aI-Laa"/>
+                            <constraint firstItem="6cc-QU-9Bp" firstAttribute="bottom" secondItem="DaY-Mt-jjk" secondAttribute="bottom" id="aeB-2D-NnX"/>
+                            <constraint firstItem="RqB-FT-FZV" firstAttribute="leading" secondItem="JOU-1E-spE" secondAttribute="leading" id="azD-ZI-Y7W"/>
+                            <constraint firstAttribute="trailing" secondItem="RqB-FT-FZV" secondAttribute="trailing" id="eWT-f9-U7O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DaY-Mt-jjk"/>
                     </view>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="transferedImage" destination="FOR-fT-g8u" id="WGE-pO-7pS"/>
+                        <outlet property="ImageCollectionView" destination="6cc-QU-9Bp" id="X5t-Nj-NID"/>
+                        <segue destination="1da-o4-0ok" kind="presentation" identifier="gotoAdd" id="kq5-co-REo"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d3I-qy-cGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ed-jd-NdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2680.8000000000002" y="-385.45727136431788"/>
+            <point key="canvasLocation" x="2042" y="-386"/>
         </scene>
         <!--Manually Select-->
         <scene sceneID="WKE-Fw-dhC">
@@ -388,7 +427,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hrc-Rg-qCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871.2" y="330.58470764617692"/>
+            <point key="canvasLocation" x="1539" y="331"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kq5-co-REo"/>
+    </inferredMetricsTieBreakers>
 </document>

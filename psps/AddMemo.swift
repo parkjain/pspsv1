@@ -50,14 +50,8 @@ class AddMemo: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     @IBAction func storeButtonClicked(_ sender: Any) {
-        performSegue(withIdentifier: "upload", sender: self)
+        performSegue(withIdentifier: "gotoTransfer", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let uploadViewController = segue.destination as! UploadImages
-        uploadViewController.color = SelectedColor
-        uploadViewController.transferImage = SelectedImage
-        uploadViewController.memo = textField.text
-    }
    
 }

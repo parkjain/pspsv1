@@ -8,22 +8,27 @@
 
 import UIKit
 import Foundation
-import CFNetwork
 
 
-class UploadImages: UIViewController {
+class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var transferImage: UIImage!
-    var memo: String!
-    var color: String!
-    
-    @IBOutlet weak var transferedImage: UIImageView!
+    @IBOutlet weak var ImageCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        transferedImage.image = transferImage
-      
-        // Do any additional setup after loading the view.
+        
+        ImageCollectionView.delegate = self
+        ImageCollectionView.dataSource = self
+        print(Images.count)
+        
+        let itemSize = UIScreen.main.bounds.width/3 - 3
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsetsMake(20, 0, 10, 0)
+        layout.itemSize = CGSize(width: itemSize, height: itemSize)
+        layout.minimumInteritemSpacing = 3
+        layout.minimumLineSpacing = 3
+        
+        ImageCollectionView.collectionViewLayout = layout
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,8 +36,23 @@ class UploadImages: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath : IndexPath) -> UICollectionViewCell {
+        print("collection view is called!")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! myCell2
+        cell.ImageView2.image = Images[indexPath.row]
+        return cell
+    }
     
     @IBAction func uploadbuttonTapped(_ sender: Any) {
    }
+    
+    @IBAction func gotoAdd(_ sender: Any) {
+        performSegue(withIdentifier: "gotoAdd", sender: self)
+    }
+    
   
 }
