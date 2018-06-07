@@ -12,15 +12,6 @@ class ResulltViewController: UIViewController {
 
     @IBOutlet weak var ResultCollectionView: UICollectionView!
     
-    var arr1 : Array<UIImage> = []
-    var arr2 : Array<UIImage> = []
-    var arr3 : Array<UIImage> = []
-    var arr4 : Array<UIImage> = []
-    var arr5 : Array<UIImage> = []
-    var arr6 : Array<UIImage> = []
-    
-    var arrsection : Array<String> = []
-    var arrCombined : NSMutableArray!
     
     override func viewDidLoad() {
         super.viewDidLoad()

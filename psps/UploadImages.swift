@@ -9,7 +9,15 @@
 import UIKit
 import Foundation
 
+var arr1 : Array<UIImage> = []
+var arr2 : Array<UIImage> = []
+var arr3 : Array<UIImage> = []
+var arr4 : Array<UIImage> = []
+var arr5 : Array<UIImage> = []
+var arr6 : Array<UIImage> = []
 
+var arrsection : Array<String> = []
+var arrCombined : NSMutableArray!
 
 class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -49,6 +57,9 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     @IBAction func uploadbuttonTapped(_ sender: Any) {
+        
+        // 분류 결과 받아서 변수에 저장
+        
    }
     
     @IBAction func gotoAdd(_ sender: Any) {
