@@ -1,55 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "group:../psps/LabelList"
-      name = "LabelList">
-      <FileRef
-         location = "group:8.png">
-      </FileRef>
-      <FileRef
-         location = "group:9.png">
-      </FileRef>
-      <FileRef
-         location = "group:14.png">
-      </FileRef>
-      <FileRef
-         location = "group:15.png">
-      </FileRef>
-      <FileRef
-         location = "group:12.png">
-      </FileRef>
-      <FileRef
-         location = "group:13.png">
-      </FileRef>
-      <FileRef
-         location = "group:11.png">
-      </FileRef>
-      <FileRef
-         location = "group:10.png">
-      </FileRef>
-      <FileRef
-         location = "group:4.png">
-      </FileRef>
-      <FileRef
-         location = "group:5.png">
-      </FileRef>
-      <FileRef
-         location = "group:7.png">
-      </FileRef>
-      <FileRef
-         location = "group:6.png">
-      </FileRef>
-      <FileRef
-         location = "group:2.png">
-      </FileRef>
-      <FileRef
-         location = "group:3.png">
-      </FileRef>
-      <FileRef
-         location = "group:1.png">
-      </FileRef>
-   </Group>
    <FileRef
       location = "self:">
    </FileRef>
