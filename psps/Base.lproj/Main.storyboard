@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543" y="20"/>
+            <point key="canvasLocation" x="385" y="28"/>
         </scene>
         <!--Camera Mode Init-->
         <scene sceneID="Od9-e6-RMb">
@@ -118,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQn-PK-ZOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048.8" y="-385.45727136431788"/>
+            <point key="canvasLocation" x="1210" y="-385"/>
         </scene>
         <!--Add Memo-->
         <scene sceneID="E3Y-qA-tae">
@@ -215,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBL-NG-tzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1539" y="-386"/>
+            <point key="canvasLocation" x="1913" y="-385"/>
         </scene>
         <!--Upload Images-->
         <scene sceneID="Hem-gi-7VC">
@@ -292,11 +293,112 @@
                     <connections>
                         <outlet property="ImageCollectionView" destination="6cc-QU-9Bp" id="X5t-Nj-NID"/>
                         <segue destination="1da-o4-0ok" kind="presentation" identifier="gotoAdd" id="kq5-co-REo"/>
+                        <segue destination="vpy-zo-dnU" kind="presentation" id="JR1-LT-HhX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ed-jd-NdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2042" y="-386"/>
+            <point key="canvasLocation" x="2674" y="-385"/>
+        </scene>
+        <!--Resullt View Controller-->
+        <scene sceneID="zIK-Rl-lO3">
+            <objects>
+                <viewController id="vpy-zo-dnU" customClass="ResulltViewController" customModule="psps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mGn-ek-SWY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PIG-dM-MmV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zud-5m-IoL">
+                                    <size key="itemSize" width="120" height="120"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="resultCell" id="gMU-tO-scN" customClass="ResultCollectionViewCell" customModule="psps" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="120" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgD-Cj-NuE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="ResultImageView" destination="mgD-Cj-NuE" id="z3E-Vb-8AF"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ResultReusableView" id="h0n-kI-TTL" customClass="ResultCollectionReusableView" customModule="psps" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QF3-bK-DKc">
+                                            <rect key="frame" x="8" y="0.0" width="314" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="QF3-bK-DKc" firstAttribute="leading" secondItem="h0n-kI-TTL" secondAttribute="leadingMargin" constant="-8" id="0yv-yh-1hf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="QF3-bK-DKc" secondAttribute="trailing" constant="37" id="2gT-vK-77M"/>
+                                        <constraint firstAttribute="bottom" secondItem="QF3-bK-DKc" secondAttribute="bottom" id="q3L-jS-nbA"/>
+                                        <constraint firstItem="QF3-bK-DKc" firstAttribute="top" secondItem="h0n-kI-TTL" secondAttribute="top" id="rTb-2x-edd"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="lblHeaderText" destination="QF3-bK-DKc" id="6QJ-af-vU7"/>
+                                    </connections>
+                                </collectionReusableView>
+                            </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cw0-x3-XQ9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="결과" id="5ou-mD-rKg"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Cw0-x3-XQ9" firstAttribute="trailing" secondItem="PIG-dM-MmV" secondAttribute="trailing" id="XAx-LG-tOV"/>
+                            <constraint firstItem="Cw0-x3-XQ9" firstAttribute="top" secondItem="8nL-yf-07d" secondAttribute="top" id="XqR-FK-Pk0"/>
+                            <constraint firstItem="Cw0-x3-XQ9" firstAttribute="bottom" secondItem="PIG-dM-MmV" secondAttribute="top" id="bol-7m-ScO"/>
+                            <constraint firstItem="Cw0-x3-XQ9" firstAttribute="leading" secondItem="mGn-ek-SWY" secondAttribute="leading" id="foS-UG-oB5"/>
+                            <constraint firstAttribute="trailing" secondItem="Cw0-x3-XQ9" secondAttribute="trailing" id="gKd-Vj-4mH"/>
+                            <constraint firstItem="Cw0-x3-XQ9" firstAttribute="leading" secondItem="PIG-dM-MmV" secondAttribute="leading" id="rXb-jy-nIM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8nL-yf-07d"/>
+                    </view>
+                    <connections>
+                        <outlet property="ResultCollectionView" destination="PIG-dM-MmV" id="K8M-3v-D4u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wp5-3Q-ieg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3773.5999999999999" y="-385.45727136431788"/>
+        </scene>
+        <!--Result Detail View Controller-->
+        <scene sceneID="nLs-cz-xHs">
+            <objects>
+                <viewController id="udI-bt-j9d" customClass="ResultDetailViewController" customModule="psps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PgN-V1-Gjh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="IPr-WK-iHv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="swd-Fj-pU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4599" y="-385"/>
         </scene>
         <!--Manually Select-->
         <scene sceneID="WKE-Fw-dhC">
@@ -380,7 +482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIp-WR-Epo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048.8" y="330.58470764617692"/>
+            <point key="canvasLocation" x="1209" y="331"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="L8n-W1-eAM">
@@ -427,10 +529,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hrc-Rg-qCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1539" y="331"/>
+            <point key="canvasLocation" x="1913" y="331"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pfO-lQ-11n"/>
+        <segue reference="kq5-co-REo"/>
     </inferredMetricsTieBreakers>
 </document>
