@@ -8,6 +8,10 @@
 
 import UIKit
 
+
+var SelectedLabelNumber: Int?
+
+
 class ManuallySelect: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var myCollectionView: UICollectionView!
@@ -53,6 +57,7 @@ class ManuallySelect: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         let cell = collectionView.cellForItem(at: indexPath) as! myCell
+        SelectedLabelNumber = indexPath.row
         selectedLabel = cell.myImageView.image
         performSegue(withIdentifier: "seeDetail", sender: self)
     }

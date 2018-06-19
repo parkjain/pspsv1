@@ -59,6 +59,7 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBAction func uploadbuttonTapped(_ sender: Any) {
         
         // 분류 결과 받아서 변수에 저장
+        //performSegue(withIdentifier: "gotoResult", sender: self)
         
    }
     

@@ -30,6 +30,8 @@
 		F15A35C520B3C8670022123B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15A35C420B3C8670022123B /* DetailViewController.swift */; };
 		F1846E7E20B19636002BA8E1 /* UploadImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1846E7D20B19636002BA8E1 /* UploadImages.swift */; };
 		F1846E8020B1BCA0002BA8E1 /* AddMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1846E7F20B1BCA0002BA8E1 /* AddMemo.swift */; };
+		F189AF7920D8D52800CE26C5 /* LoadingImageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F189AF7820D8D52800CE26C5 /* LoadingImageViewViewController.swift */; };
+		F189AF7B20D8D58B00CE26C5 /* newproject_2_original.png in Resources */ = {isa = PBXBuildFile; fileRef = F189AF7A20D8D58B00CE26C5 /* newproject_2_original.png */; };
 		F1934D8920AD907400538E4B /* ManuallySelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1934D8820AD907400538E4B /* ManuallySelect.swift */; };
 		F1934D8B20AD917000538E4B /* CameraModeInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1934D8A20AD917000538E4B /* CameraModeInit.swift */; };
 		F1934D8F20ADA93D00538E4B /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1934D8E20ADA93D00538E4B /* myCell.swift */; };
@@ -64,6 +66,8 @@
 		F15A35C420B3C8670022123B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F1846E7D20B19636002BA8E1 /* UploadImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImages.swift; sourceTree = "<group>"; };
 		F1846E7F20B1BCA0002BA8E1 /* AddMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemo.swift; sourceTree = "<group>"; };
+		F189AF7820D8D52800CE26C5 /* LoadingImageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageViewViewController.swift; sourceTree = "<group>"; };
+		F189AF7A20D8D58B00CE26C5 /* newproject_2_original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newproject_2_original.png; sourceTree = "<group>"; };
 		F1934D8820AD907400538E4B /* ManuallySelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManuallySelect.swift; sourceTree = "<group>"; };
 		F1934D8A20AD917000538E4B /* CameraModeInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModeInit.swift; sourceTree = "<group>"; };
 		F1934D8E20ADA93D00538E4B /* myCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 		F1FA5C3A20AD6972003F8CC5 = {
 			isa = PBXGroup;
 			children = (
+				F189AF7A20D8D58B00CE26C5 /* newproject_2_original.png */,
 				F147BF6C20C53BC30026B505 /* LabelList */,
 				F1FA5C4520AD6972003F8CC5 /* psps */,
 				F1FA5C4420AD6972003F8CC5 /* Products */,
@@ -132,6 +137,7 @@
 			children = (
 				F1FA5C4620AD6972003F8CC5 /* AppDelegate.swift */,
 				F1FA5C4A20AD6972003F8CC5 /* Main.storyboard */,
+				F189AF7820D8D52800CE26C5 /* LoadingImageViewViewController.swift */,
 				F1934D8E20ADA93D00538E4B /* myCell.swift */,
 				F13AAF1720BF934900ABBDD1 /* myCell2.swift */,
 				F147BF8F20C8F1690026B505 /* ResultCollectionViewCell.swift */,
@@ -225,6 +231,7 @@
 				F147BF8020C53BC30026B505 /* 12.png in Resources */,
 				F147BF7D20C53BC30026B505 /* 9.png in Resources */,
 				F147BF7E20C53BC30026B505 /* 14.png in Resources */,
+				F189AF7B20D8D58B00CE26C5 /* newproject_2_original.png in Resources */,
 				F147BF8520C53BC30026B505 /* 5.png in Resources */,
 				F1FA5C4C20AD6972003F8CC5 /* Main.storyboard in Resources */,
 			);
@@ -237,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F189AF7920D8D52800CE26C5 /* LoadingImageViewViewController.swift in Sources */,
 				F1FA5C4920AD6972003F8CC5 /* ViewController.swift in Sources */,
 				F1934D8B20AD917000538E4B /* CameraModeInit.swift in Sources */,
 				F1934D8F20ADA93D00538E4B /* myCell.swift in Sources */,
