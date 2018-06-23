@@ -19,6 +19,7 @@ var arr6 : Array<UIImage> = []
 var arrsection : Array<String> = []
 var arrCombined : NSMutableArray!
 
+@available(iOS 11.0, *)
 class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var ImageCollectionView: UICollectionView!
@@ -59,7 +60,24 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBAction func uploadbuttonTapped(_ sender: Any) {
         
         // 분류 결과 받아서 변수에 저장
-        //performSegue(withIdentifier: "gotoResult", sender: self)
+        
+       // for i in 0 ..< Images.count {
+            
+            let model = ssd_mobilenet()
+            
+            guard let ssd_mobilenetOutput = try? model.prediction(Preprocessor__sub__0: Images[0] as! CVPixelBuffer) else {
+                fatalError("Unexpected runtime error.")
+            }
+            
+            let result = ssd_mobilenetOutput.concat_1__0
+            
+            print(result)
+            
+            
+       // }
+        
+        
+        performSegue(withIdentifier: "gotoResult", sender: self)
         
    }
     
