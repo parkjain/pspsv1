@@ -19,6 +19,32 @@ var arr6 : Array<UIImage> = []
 var arrsection : Array<String> = []
 var arrCombined : NSMutableArray!
 
+
+extension UIImage {
+    func buffer(with size:CGSize) -> CVPixelBuffer? {
+        if let image = self.cgImage {
+            let frameSize = size
+            var pixelBuffer:CVPixelBuffer? = nil
+            let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(frameSize.width), Int(frameSize.height), kCVPixelFormatType_32BGRA , nil, &pixelBuffer)
+            if status != kCVReturnSuccess {
+                return nil
+            }
+            CVPixelBufferLockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags.init(rawValue: 0))
+            let data = CVPixelBufferGetBaseAddress(pixelBuffer!)
+            let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
+            let bitmapInfo = CGBitmapInfo(rawValue: CGBitmapInfo.byteOrder32Little.rawValue | CGImageAlphaInfo.premultipliedFirst.rawValue)
+            let context = CGContext(data: data, width: Int(frameSize.width), height: Int(frameSize.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!), space: rgbColorSpace, bitmapInfo: bitmapInfo.rawValue)
+            context?.draw(image, in: CGRect(x: 0, y: 0, width: image.width, height: image.height))
+            CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+            
+            return pixelBuffer
+        }else{
+            return nil
+        }
+    }
+}
+
+
 @available(iOS 11.0, *)
 class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -61,30 +87,30 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // 분류 결과 받아서 변수에 저장
        
-        let startTime = CFAbsoluteTimeGetCurrent()
        
        for i in 0 ..< Images.count {
         
             let model = ssd_mobilenet()
-        print("dd")
+        let image = Images[i]
         
-            guard let ssd_mobilenetOutput = try? model.prediction(Preprocessor__sub__0: Images[i] as! CVPixelBuffer) else {
-                fatalError("Unexpected runtime error.")
-            }
-        
-        let processTime = CFAbsoluteTimeGetCurrent() - startTime
-        print("Process Time = \(processTime)")
-        //
-        
-        let result = ssd_mobilenetOutput.concat_1__0
+        if let buffer = image.buffer(with: CGSize(width:300, height:300)) {
+            guard let prediction = try? model.prediction(Preprocessor__sub__0: buffer) else {fatalError("Unexpected runtime error")}
+            
+
+ 
+        let result = prediction.concat_1__0
             
         print(result)
         
-        //switch문
-        
+            switch result {
+            case 1: if(color[i] == "white") {arr1.append(Images[i])} else{ arr2.append(Images[i])}
+            case 2: if(color[i] == "white") {arr3.append(Images[i])} else{ arr4.append(Images[i])}
+            case 3: arr5.append(Images[i])
+            case 4: arr6.append(Images[i])
+            }
+        }
             
         }
-        
         performSegue(withIdentifier: "gotoResult", sender: self)
         
    }
@@ -93,5 +119,4 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
         performSegue(withIdentifier: "gotoAdd", sender: self)
     }
     
-  
 }
