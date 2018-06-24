@@ -8,10 +8,16 @@
 
 import UIKit
 
+
+var selectedSection = 0
+
 class ResulltViewController: UIViewController {
 
     @IBOutlet weak var ResultCollectionView: UICollectionView!
     
+    @IBAction func detail(_ sender: Any) {
+        performSegue(withIdentifier: "gotoDetailResult", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +30,7 @@ class ResulltViewController: UIViewController {
     }
     
 }
+
 
 extension ResulltViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -47,6 +54,7 @@ extension ResulltViewController : UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (arrCombined.object(at: section) as! NSArray).count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell : ResultCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "resultCell", for: indexPath) as! ResultCollectionViewCell
@@ -73,5 +81,7 @@ extension ResulltViewController : UICollectionViewDataSource, UICollectionViewDe
         
         return cell
     }
+    
+    
 }
 
