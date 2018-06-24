@@ -98,7 +98,7 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
             
 
  
-       let result1 = prediction.dataType.rawValue
+       let result1 = prediction.dataType.hashValue
 //            let result2 = prediction.concat_1__0[1]
   //          let result3 = prediction.concat_1__0[2]
     //        let result4 = prediction.concat_1__0[3]
