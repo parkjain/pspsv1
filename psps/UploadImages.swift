@@ -94,22 +94,32 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
         let image = Images[i]
         
         if let buffer = image.buffer(with: CGSize(width:300, height:300)) {
-            guard let prediction = try? model.prediction(Preprocessor__sub__0: buffer) else {fatalError("Unexpected runtime error")}
+            guard let prediction = try? model.prediction(Preprocessor__sub__0: buffer).concat_1__0 else {fatalError("Unexpected runtime error")}
             
 
  
-        let result = prediction.concat_1__0
+       let result1 = prediction.dataType.rawValue
+//            let result2 = prediction.concat_1__0[1]
+  //          let result3 = prediction.concat_1__0[2]
+    //        let result4 = prediction.concat_1__0[3]
+      //      let result5 = prediction.concat_1__0[4]
+        //    let result6 = prediction.concat_1__0[5]
             
-        print(result)
-        
+        print(result1)
+          //  print(result2)
+            //print(result3)
+            //print(result4)
+            //print(result5)
+            //print(result6)
+        /*
             switch result {
             case 1: if(color[i] == "white") {arr1.append(Images[i])} else{ arr2.append(Images[i])}
             case 2: if(color[i] == "white") {arr3.append(Images[i])} else{ arr4.append(Images[i])}
             case 3: arr5.append(Images[i])
             case 4: arr6.append(Images[i])
             }
+ */
         }
-            
         }
         performSegue(withIdentifier: "gotoResult", sender: self)
         

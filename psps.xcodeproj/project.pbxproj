@@ -36,7 +36,7 @@
 		F1934D8B20AD917000538E4B /* CameraModeInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1934D8A20AD917000538E4B /* CameraModeInit.swift */; };
 		F1934D8F20ADA93D00538E4B /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1934D8E20ADA93D00538E4B /* myCell.swift */; };
 		F1A4D19720DF7CA80002FF52 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A4D19620DF7CA80002FF52 /* UIImage+CVPixelBuffer.swift */; };
-		F1A4D1BB20DFA2E10002FF52 /* ssd_mobilenet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F1A4D1BA20DFA2E10002FF52 /* ssd_mobilenet.mlmodel */; };
+		F1A4D1BE20DFAF8A0002FF52 /* ssd_mobilenet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F1A4D1BD20DFAF8A0002FF52 /* ssd_mobilenet.mlmodel */; };
 		F1FA5C4720AD6972003F8CC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA5C4620AD6972003F8CC5 /* AppDelegate.swift */; };
 		F1FA5C4920AD6972003F8CC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA5C4820AD6972003F8CC5 /* ViewController.swift */; };
 		F1FA5C4C20AD6972003F8CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FA5C4A20AD6972003F8CC5 /* Main.storyboard */; };
@@ -74,7 +74,7 @@
 		F1934D8A20AD917000538E4B /* CameraModeInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModeInit.swift; sourceTree = "<group>"; };
 		F1934D8E20ADA93D00538E4B /* myCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
 		F1A4D19620DF7CA80002FF52 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
-		F1A4D1BA20DFA2E10002FF52 /* ssd_mobilenet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ssd_mobilenet.mlmodel; path = ../../../Downloads/ssd_mobilenet.mlmodel; sourceTree = "<group>"; };
+		F1A4D1BD20DFAF8A0002FF52 /* ssd_mobilenet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ssd_mobilenet.mlmodel; path = ../../../Downloads/ssd_mobilenet.mlmodel; sourceTree = "<group>"; };
 		F1FA5C4320AD6972003F8CC5 /* psps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = psps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FA5C4620AD6972003F8CC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1FA5C4820AD6972003F8CC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		F1FA5C4520AD6972003F8CC5 /* psps */ = {
 			isa = PBXGroup;
 			children = (
-				F1A4D1BA20DFA2E10002FF52 /* ssd_mobilenet.mlmodel */,
+				F1A4D1BD20DFAF8A0002FF52 /* ssd_mobilenet.mlmodel */,
 				F1A4D19620DF7CA80002FF52 /* UIImage+CVPixelBuffer.swift */,
 				F1FA5C4620AD6972003F8CC5 /* AppDelegate.swift */,
 				F1FA5C4A20AD6972003F8CC5 /* Main.storyboard */,
@@ -255,7 +255,7 @@
 				F1934D8B20AD917000538E4B /* CameraModeInit.swift in Sources */,
 				F1934D8F20ADA93D00538E4B /* myCell.swift in Sources */,
 				F147BF8E20C8EE3A0026B505 /* ResultDetailViewController.swift in Sources */,
-				F1A4D1BB20DFA2E10002FF52 /* ssd_mobilenet.mlmodel in Sources */,
+				F1A4D1BE20DFAF8A0002FF52 /* ssd_mobilenet.mlmodel in Sources */,
 				F1934D8920AD907400538E4B /* ManuallySelect.swift in Sources */,
 				F13AAF1820BF934900ABBDD1 /* myCell2.swift in Sources */,
 				F1A4D19720DF7CA80002FF52 /* UIImage+CVPixelBuffer.swift in Sources */,
