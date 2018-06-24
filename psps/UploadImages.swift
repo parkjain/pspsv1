@@ -86,28 +86,15 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBAction func uploadbuttonTapped(_ sender: Any) {
         
         // 분류 결과 받아서 변수에 저장
-       
-       
-       for i in 0 ..< Images.count {
-        
-            let model = ssd_mobilenet()
-        let image = Images[i]
-        
-        if let buffer = image.buffer(with: CGSize(width:300, height:300)) {
-            guard let prediction = try? model.prediction(Preprocessor__sub__0: buffer) else {fatalError("Unexpected runtime error")}
-            
-
- 
-        let result = prediction.concat_1__0
-            
-        print(result)
-        
+        for i in 0 ..< 3 {
+            let result = i
             switch result {
-            case 1: if(color[i] == "white") {arr1.append(Images[i])} else{ arr2.append(Images[i])}
-            case 2: if(color[i] == "white") {arr3.append(Images[i])} else{ arr4.append(Images[i])}
-            case 3: arr5.append(Images[i])
-            case 4: arr6.append(Images[i])
-            }
+            case 0: if(color[i] == "white") {arr1.append(Images[i])} else{ arr2.append(Images[i])}
+            case 1: if(color[i] == "white") {arr3.append(Images[i])} else{ arr4.append(Images[i])}
+            case 2: arr5.append(Images[i])
+            case 3: arr6.append(Images[i])
+            default:
+                arr1.append(Images[i])
         }
             
         }
