@@ -90,15 +90,25 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
             var result = String()
             if let buffer = Images[i].buffer(with: CGSize(width:227, height:227)) {
                 guard let output = try? model.prediction(image: buffer) else {fatalError("Unexpected runtime error")}
-//                result = output.cleanType
-//                print("결과 : ",result)
+                result = output.cleanType
+                print("결과 : ",result)
 
             }else{
                 print("failed buffer")
             }
         
+            let result2 = i%6
         //잘 돌아가는지 한 번 보자!
-            
+            switch result2 {
+            case 0 : arr1.append(Images[i])
+            case 1 : arr2.append(Images[i])
+            case 2 : arr3.append(Images[i])
+            case 3 : arr4.append(Images[i])
+            case 4 : arr5.append(Images[i])
+            default : arr6.append(Images[i])
+
+            }
+        
             
         }
         
