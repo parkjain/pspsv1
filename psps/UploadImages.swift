@@ -106,10 +106,30 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
         
            
         //잘 돌아가는지 한 번 보자!
-            
-
+            if(result == "Donotwash"){
+                arr1.append(Images[i])
+                memo1.append(memo[i])
             }
-        
+            else if(result == "Wash40")
+            {
+                if(memo[i] == "white"){
+                    arr3.append(Images[i])
+                }
+                else{
+                    arr4.append(Images[i])
+                }
+            }
+            else if(result == "Handwash30"){
+                arr2.append(Images[i])
+            }
+            else if(result == "Wash30") {
+                if(memo[i] == "white"){
+                    arr5.append(Images[i])
+                }
+                else{
+                    arr6.append(Images[i])
+                }
+            }
             
         }
         
