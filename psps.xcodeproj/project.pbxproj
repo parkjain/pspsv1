@@ -36,9 +36,11 @@
 		F1FA5C4C20AD6972003F8CC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FA5C4A20AD6972003F8CC5 /* Main.storyboard */; };
 		F1FA5C4E20AD6974003F8CC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FA5C4D20AD6974003F8CC5 /* Assets.xcassets */; };
 		F1FA5C5120AD6974003F8CC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FA5C4F20AD6974003F8CC5 /* LaunchScreen.storyboard */; };
-		F1FB647220E0B8DE0079701D /* wash.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F1FB647120E0B8DE0079701D /* wash.mlmodel */; };
 		F1FB647A20E0CAAA0079701D /* cell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB647920E0CAAA0079701D /* cell3.swift */; };
 		F1FB647C20E0CC2B0079701D /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB647B20E0CC2B0079701D /* ResultViewController.swift */; };
+		F1FB647E20E0DBFC0079701D /* DetailResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB647D20E0DBFC0079701D /* DetailResultViewController.swift */; };
+		F1FB648020E0DDC50079701D /* ResultWithMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FB647F20E0DDC50079701D /* ResultWithMemoViewController.swift */; };
+		F1FB648220E0F2720079701D /* wash.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F1FB648120E0F2720079701D /* wash.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,9 +75,11 @@
 		F1FA5C4D20AD6974003F8CC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1FA5C5020AD6974003F8CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1FA5C5220AD6974003F8CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1FB647120E0B8DE0079701D /* wash.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = wash.mlmodel; sourceTree = "<group>"; };
 		F1FB647920E0CAAA0079701D /* cell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cell3.swift; sourceTree = "<group>"; };
 		F1FB647B20E0CC2B0079701D /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		F1FB647D20E0DBFC0079701D /* DetailResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResultViewController.swift; sourceTree = "<group>"; };
+		F1FB647F20E0DDC50079701D /* ResultWithMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultWithMemoViewController.swift; sourceTree = "<group>"; };
+		F1FB648120E0F2720079701D /* wash.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = wash.mlmodel; path = ../../MLClassifier/MLClassifier/wash.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +137,10 @@
 		F1FA5C4520AD6972003F8CC5 /* psps */ = {
 			isa = PBXGroup;
 			children = (
-				F1FB647120E0B8DE0079701D /* wash.mlmodel */,
+				F1FB648120E0F2720079701D /* wash.mlmodel */,
 				F1FA5C4620AD6972003F8CC5 /* AppDelegate.swift */,
 				F1FA5C4A20AD6972003F8CC5 /* Main.storyboard */,
+				F1FB647D20E0DBFC0079701D /* DetailResultViewController.swift */,
 				F189AF7820D8D52800CE26C5 /* LoadingImageViewViewController.swift */,
 				F1934D8E20ADA93D00538E4B /* myCell.swift */,
 				F13AAF1720BF934900ABBDD1 /* myCell2.swift */,
@@ -147,6 +152,7 @@
 				F1846E7F20B1BCA0002BA8E1 /* AddMemo.swift */,
 				F1846E7D20B19636002BA8E1 /* UploadImages.swift */,
 				F1FB647B20E0CC2B0079701D /* ResultViewController.swift */,
+				F1FB647F20E0DDC50079701D /* ResultWithMemoViewController.swift */,
 				F1FA5C4D20AD6974003F8CC5 /* Assets.xcassets */,
 				F1FA5C4F20AD6974003F8CC5 /* LaunchScreen.storyboard */,
 				F1FA5C5220AD6974003F8CC5 /* Info.plist */,
@@ -241,16 +247,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1FB647E20E0DBFC0079701D /* DetailResultViewController.swift in Sources */,
 				F1FB647C20E0CC2B0079701D /* ResultViewController.swift in Sources */,
 				F189AF7920D8D52800CE26C5 /* LoadingImageViewViewController.swift in Sources */,
 				F1FB647A20E0CAAA0079701D /* cell3.swift in Sources */,
 				F1FA5C4920AD6972003F8CC5 /* ViewController.swift in Sources */,
+				F1FB648220E0F2720079701D /* wash.mlmodel in Sources */,
 				F1934D8B20AD917000538E4B /* CameraModeInit.swift in Sources */,
+				F1FB648020E0DDC50079701D /* ResultWithMemoViewController.swift in Sources */,
 				F1934D8F20ADA93D00538E4B /* myCell.swift in Sources */,
 				F1934D8920AD907400538E4B /* ManuallySelect.swift in Sources */,
 				F13AAF1820BF934900ABBDD1 /* myCell2.swift in Sources */,
 				F1846E7E20B19636002BA8E1 /* UploadImages.swift in Sources */,
-				F1FB647220E0B8DE0079701D /* wash.mlmodel in Sources */,
 				F1846E8020B1BCA0002BA8E1 /* AddMemo.swift in Sources */,
 				F1FA5C4720AD6972003F8CC5 /* AppDelegate.swift in Sources */,
 				F15A35C520B3C8670022123B /* DetailViewController.swift in Sources */,

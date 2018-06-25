@@ -16,6 +16,13 @@ var arr4 : Array<UIImage> = []
 var arr5 : Array<UIImage> = []
 var arr6 : Array<UIImage> = []
 
+var memo1 : Array<String> = []
+var memo2 : Array<String> = []
+var memo3 : Array<String> = []
+var memo4 : Array<String> = []
+var memo5 : Array<String> = []
+var memo6 : Array<String> = []
+
 var arrsection : Array<String> = []
 var arrCombined : NSMutableArray!
 
@@ -97,15 +104,9 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
                 print("failed buffer")
             }
         
-            let result2 = i%6
+           
         //잘 돌아가는지 한 번 보자!
-            switch result2 {
-            case 0 : arr1.append(Images[i])
-            case 1 : arr2.append(Images[i])
-            case 2 : arr3.append(Images[i])
-            case 3 : arr4.append(Images[i])
-            case 4 : arr5.append(Images[i])
-            default : arr6.append(Images[i])
+            
 
             }
         
