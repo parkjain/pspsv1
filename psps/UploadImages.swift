@@ -86,28 +86,20 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBAction func uploadbuttonTapped(_ sender: Any) {
         for i in 0 ..< Images.count {
         
-            let model = ssd_mobilenet()
-            var result = NSNumber()
-            if let buffer = Images[i].buffer(with: CGSize(width:300, height:300)) {
-                guard let output = try? model.prediction(Preprocessor__sub__0: buffer) else {fatalError("Unexpected runtime error")}
-                result = output.concat_1__0[0]
-                print("결과 : ",result)
+            let model = wash()
+            var result = String()
+            if let buffer = Images[i].buffer(with: CGSize(width:227, height:227)) {
+                guard let output = try? model.prediction(image: buffer) else {fatalError("Unexpected runtime error")}
+//                result = output.cleanType
+//                print("결과 : ",result)
 
             }else{
                 print("failed buffer")
             }
         
         //잘 돌아가는지 한 번 보자!
-          let result2 = i%6
-            switch result2{
-                case 0 : arr1.append(Images[i])
-                case 1 : arr2.append(Images[i])
-                case 2 : arr3.append(Images[i])
-                case 3 : arr4.append(Images[i])
-                case 4 : arr5.append(Images[i])
-                case 5 : arr6.append(Images[i])
-                default: arr1.append(Images[i])
-            }
+            
+            
         }
         
         print(arr1.count)
