@@ -60,9 +60,7 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBAction func uploadbuttonTapped(_ sender: Any) {
         
         // 분류 결과 받아서 변수에 저장
-       
-        let startTime = CFAbsoluteTimeGetCurrent()
-       
+        
        for i in 0 ..< Images.count {
         
             let model = ssd_mobilenet()
@@ -71,15 +69,25 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
                 fatalError("Unexpected runtime error.")
             }
         
-        let processTime = CFAbsoluteTimeGetCurrent() - startTime
-        print("Process Time = \(processTime)")
-        //
         
-        let result = ssd_mobilenetOutput.concat_1__0
+      //let result = ssd_mobilenetOutput.concat_1__0
+        let result = i%6
+        
+        print("결과 : ",result)
+        
+        //잘 돌아가는지 한 번 보자!
+        
+        switch result{
+        case 0 : arr1.append(Images[i])
+        case 1 : arr2.append(Images[i])
+        case 2 : arr3.append(Images[i])
+        case 3 : arr4.append(Images[i])
+        case 4 : arr5.append(Images[i])
+        case 5 : arr6.append(Images[i])
             
-        print(result)
-        
-        //switch문
+        default:
+            arr1.append(Images[i])
+        }
         
             
         }

@@ -21,9 +21,7 @@ class ResulltViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         print("결과 출력 화면이 로드되었습니다!")
-
         arrCombined.addObjects(from: [arr1, arr2, arr3, arr4, arr5, arr6])
     }
 
