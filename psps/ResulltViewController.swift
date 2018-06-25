@@ -61,22 +61,22 @@ extension ResulltViewController : UICollectionViewDataSource, UICollectionViewDe
         
         if(indexPath.section == 0)
         {
-            cell.ResultImageView.image = arr1[indexPath.row]
+            cell.ResultImageView.image = arr1[indexPath.row] //물세탁 금지
         }else if(indexPath.section == 1)
         {
-            cell.ResultImageView.image = arr2[indexPath.row]
+            cell.ResultImageView.image = arr2[indexPath.row] //미온수 이염가능
         }else if(indexPath.section == 2)
         {
-            cell.ResultImageView.image = arr3[indexPath.row]
+            cell.ResultImageView.image = arr3[indexPath.row] //미온수 이염없음
         }else if(indexPath.section == 3)
         {
-            cell.ResultImageView.image = arr4[indexPath.row]
+            cell.ResultImageView.image = arr4[indexPath.row] //온수 이염가능
         }else if(indexPath.section == 4)
         {
-            cell.ResultImageView.image = arr5[indexPath.row]
+            cell.ResultImageView.image = arr5[indexPath.row] //온수 이염없음
         }else if(indexPath.section == 5)
         {
-            cell.ResultImageView.image = arr6[indexPath.row]
+            cell.ResultImageView.image = arr6[indexPath.row] //미온수 손세탁 중성세제 사용
         }
         
         return cell

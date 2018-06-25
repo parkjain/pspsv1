@@ -45,10 +45,6 @@ extension UIImage {
 }
 
 
-
-
-
-
 @available(iOS 11.0, *)
 class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -113,6 +109,14 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
                 default: arr1.append(Images[i])
             }
         }
+        
+        print(arr1.count)
+        print(arr2.count)
+        print(arr3.count)
+        print(arr4.count)
+        print(arr5.count)
+        print(arr6.count)
+
         performSegue(withIdentifier: "gotoResult", sender: self)
    }
     
