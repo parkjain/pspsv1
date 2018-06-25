@@ -51,7 +51,7 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath : IndexPath) -> UICollectionViewCell {
-        print("collection view is called!")
+        //print("collection view is called!")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! myCell2
         cell.ImageView2.image = Images[indexPath.row]
         return cell
@@ -66,7 +66,6 @@ class UploadImages: UIViewController, UICollectionViewDelegate, UICollectionView
        for i in 0 ..< Images.count {
         
             let model = ssd_mobilenet()
-        print("dd")
         
             guard let ssd_mobilenetOutput = try? model.prediction(Preprocessor__sub__0: Images[i] as! CVPixelBuffer) else {
                 fatalError("Unexpected runtime error.")

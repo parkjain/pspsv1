@@ -54,7 +54,7 @@ class CameraModeInit: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
-        print(mediaType)
+        //print(mediaType)
         
         if mediaType.isEqual(to: kUTTypeImage as NSString as String) {
             captureImage = info[UIImagePickerControllerOriginalImage] as! UIImage
